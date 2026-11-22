@@ -3,7 +3,7 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const icon = (name) => `<svg aria-hidden="true"><use href="#ic-${name}"/></svg>`;
-  const cvUrl = 'assets/Abdelqader_Al-Salem_CV_2026.docx';
+  const cvUrl = 'assets/Abdelqader_Al-Salem_CV.docx';
   const gh = 'https://github.com/AbdelAlSalem';
   const linkedin = 'https://www.linkedin.com/in/abdelqader-al-salem-1bb22b366/';
   const email = 'a.mhd.alsalem@gmail.com';
@@ -42,7 +42,7 @@
         </div>
         <div class="about-content">
           ${header('The person behind the projects', "Who's Abdelqader?", 'Software Engineer · Networks · AI')}
-          <p class="about-meta">Istanbul, Türkiye · Jeddah, Saudi Arabia · Open to EMEA</p>
+          <p class="about-meta">Jeddah, Saudi Arabia · Istanbul, Türkiye · Open to EMEA</p>
           <div class="about-profile">
             <p class="prose">I’m a <strong>Software Engineering graduate from Üsküdar University</strong> with a passion for building useful technology — from polished user interfaces and full-stack applications to AI-assisted network diagnostics.</p>
             <p class="prose">I work with <strong>React, TypeScript, Node.js, PostgreSQL, and REST APIs</strong>. My networking foundation includes Cisco routing and switching, subnetting and Azure networking; I’m also learning how to design evidence-backed AI agents that solve real technical problems.</p>
@@ -109,11 +109,11 @@
       </section>`;
     },
     location() {
-      return `<section>${header('Istanbul · Jeddah','Location & Mobility','Born in Saudi Arabia · Building my career across Türkiye and Saudi Arabia.','location')}
+      return `<section>${header('Jeddah · Istanbul','Location & Mobility','Born in Saudi Arabia · Building my career across Türkiye and Saudi Arabia.','location')}
         <div class="location-gallery"><img src="${photoUrl('bosphorus-night.webp')}" alt="Abdelqader overlooking the illuminated Bosphorus bridge"><img src="${photoUrl('giza-visit.webp')}" alt="Abdelqader at the Great Sphinx in Egypt"></div>
-        <p class="prose"><strong>Born in Saudi Arabia and currently based in Istanbul, Türkiye</strong>, I have strong ties to both countries. I’m actively pursuing <strong>software engineering, networking, and AI opportunities in Jeddah, Saudi Arabia, and Istanbul</strong>, with a particular interest in building my career in the Kingdom. I’m open to relocating to Jeddah for the right opportunity and to collaborating across EMEA.</p>
-        <p class="prose">I hold <strong>Turkish and Jordanian passports</strong> and a <strong>Saudi Iqama</strong>, bringing international mobility and familiarity with the region. I work in <strong>Arabic (native)</strong> and <strong>English (advanced)</strong>, and speak <strong>beginner Turkish</strong>. I value clear communication and working with people from different backgrounds.</p>
-        <div class="pill-row"><span class="info-pill">${icon('location')} Istanbul, Türkiye</span><span class="info-pill">${icon('briefcase')} Jeddah, Saudi Arabia</span><span class="info-pill">${icon('globe')} Open to EMEA</span></div>
+        <p class="prose"><strong>Born and raised in Saudi Arabia, I am currently based in Jeddah, Saudi Arabia.</strong> I graduated with a Bachelor's degree in Software Engineering from <strong>Üsküdar University in Istanbul, Türkiye</strong>. My international academic background and strong connection to Saudi Arabia have shaped my professional ambitions. I am actively seeking opportunities in <strong>Software Engineering, Network Engineering, and Artificial Intelligence</strong>, with a strong focus on contributing to Saudi Arabia's growing technology sector. I am also open to opportunities and collaborations across the EMEA region.</p>
+        <p class="prose">I hold <strong>Turkish and Jordanian passports</strong>, along with a <strong>valid Saudi Iqama</strong>, allowing me flexibility in pursuing regional career opportunities. I communicate in <strong>Arabic (native)</strong> and <strong>English (advanced)</strong>, with beginner proficiency in <strong>Turkish</strong>. I bring a multicultural perspective, strong adaptability, and a commitment to continuous learning and professional growth.</p>
+        <div class="pill-row"><span class="info-pill">${icon('location')} Jeddah, Saudi Arabia</span><span class="info-pill">${icon('briefcase')} Istanbul, Türkiye</span><span class="info-pill">${icon('globe')} Open to EMEA</span></div>
         <div class="dialog-cta-row"><button data-open="contact" class="action-primary">${icon('mail')} Let's talk opportunities</button><button data-open="about" class="action-secondary">${icon('user')} More about me</button></div>
       </section>`;
     },
@@ -131,10 +131,10 @@
           <a class="contact-link" href="${composeInOutlook}" target="_blank" rel="noopener noreferrer"><span class="round-icon">${icon('mail')}</span><span><strong>Compose in Outlook</strong><small>Use Outlook in your browser</small></span>${icon('arrow')}</a>
           <a class="contact-link" href="${linkedin}" target="_blank" rel="noopener noreferrer"><span class="round-icon">${icon('linkedin')}</span><span><strong>LinkedIn</strong><small>Connect professionally</small></span>${icon('arrow')}</a>
           <a class="contact-link" href="${gh}" target="_blank" rel="noopener noreferrer"><span class="round-icon">${icon('github')}</span><span><strong>GitHub</strong><small>Explore the code behind my work</small></span>${icon('arrow')}</a>
-          <a class="contact-link" href="tel:+905521511094"><span class="round-icon">${icon('phone')}</span><span><strong>+90 552 151 10 94</strong><small>Call me</small></span>${icon('arrow')}</a>
+          <a class="contact-link" href="tel:+966571164399"><span class="round-icon">${icon('phone')}</span><span><strong>+90 552 151 10 94</strong><small>Call me</small></span>${icon('arrow')}</a>
           <button type="button" class="contact-link copy-email" id="copyEmail"><span class="round-icon">${icon('copy')}</span><span><strong>Copy email address</strong><small>One click to copy</small></span>${icon('copy')}</button>
         </div>
-        <div class="contact-footer">Istanbul, Türkiye · Jeddah, Saudi Arabia · Open to EMEA</div>
+        <div class="contact-footer">Jeddah, Saudi Arabia · Istanbul, Türkiye · Open to EMEA</div>
       </section>`;
     },
   };
