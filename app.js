@@ -131,7 +131,7 @@
           <a class="contact-link" href="${composeInOutlook}" target="_blank" rel="noopener noreferrer"><span class="round-icon">${icon('mail')}</span><span><strong>Compose in Outlook</strong><small>Use Outlook in your browser</small></span>${icon('arrow')}</a>
           <a class="contact-link" href="${linkedin}" target="_blank" rel="noopener noreferrer"><span class="round-icon">${icon('linkedin')}</span><span><strong>LinkedIn</strong><small>Connect professionally</small></span>${icon('arrow')}</a>
           <a class="contact-link" href="${gh}" target="_blank" rel="noopener noreferrer"><span class="round-icon">${icon('github')}</span><span><strong>GitHub</strong><small>Explore the code behind my work</small></span>${icon('arrow')}</a>
-          <a class="contact-link" href="tel:+966571164399"><span class="round-icon">${icon('phone')}</span><span><strong>+90 552 151 10 94</strong><small>Call me</small></span>${icon('arrow')}</a>
+          <a class="contact-link" href="tel:+966571164399"><span class="round-icon">${icon('phone')}</span><span><strong>+966 57 116 4399</strong><small>Call me</small></span>${icon('arrow')}</a>
           <button type="button" class="contact-link copy-email" id="copyEmail"><span class="round-icon">${icon('copy')}</span><span><strong>Copy email address</strong><small>One click to copy</small></span>${icon('copy')}</button>
         </div>
         <div class="contact-footer">Jeddah, Saudi Arabia · Istanbul, Türkiye · Open to EMEA</div>
