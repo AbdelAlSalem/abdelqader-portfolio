@@ -148,6 +148,10 @@ h1 {font-size:clamp(26px, 3.2vw, 33px);margin:0 0 6px;font-weight:760;letter-spa
 .project-symbol svg {height:20px;width:20px}
 .project-card h3 {font-size:13px;font-weight:720;letter-spacing:-.1px;line-height:1.4;margin:0}
 .project-stack {font-size:10.5px;color:#8892a7;line-height:1.5}
+.project-card .project-meta {font-size:11px}
+.project-tags.skill-list {gap:5px}
+.project-tags .skill-tag {font-size:10.5px;gap:4px;padding:3px 7px}
+.project-tags .skill-tag i {width:5px;height:5px}
 .project-actions {margin-top:auto;display:flex;flex-wrap:wrap;gap:6px}
 .project-actions a {font-size:11px;font-weight:640;text-decoration:none;color:#4a679c;padding:7px 10px;border:1px solid #e5e9f2;border-radius:999px;background:#f8faff;display:inline-flex;align-items:center;gap:4px}
 .project-actions a:hover {background:#edf2fc}

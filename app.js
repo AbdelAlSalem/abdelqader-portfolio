@@ -3,7 +3,8 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const icon = (name) => `<svg aria-hidden="true"><use href="#ic-${name}"/></svg>`;
-  const cvUrl = 'assets/Abdelqader_Al-Salem_CV.docx';
+  const cvFilename = 'Abdelqader_Al-Salem_CV.docx';
+  const cvUrl = `assets/${cvFilename}`;
   const gh = 'https://github.com/AbdelAlSalem';
   const linkedin = 'https://www.linkedin.com/in/abdelqader-al-salem-1bb22b366/';
   const email = 'a.mhd.alsalem@gmail.com';
@@ -56,7 +57,7 @@
           </div>
           <p class="kicker">Currently focused on</p>
           <p class="prose">Growing as a software and networking engineer, building practical AI tools, and pursuing engineering opportunities in both Istanbul and Jeddah, with a strong interest in working in Saudi Arabia.</p>
-          <div class="dialog-cta-row"><button class="action-primary" data-open="projects">${icon('cpu')} See my projects</button><a class="action-secondary" href="${cvUrl}" download="Abdelqader_Al-Salem_CV_2026.docx">${icon('download')} Download CV</a></div>
+          <div class="dialog-cta-row"><button class="action-primary" data-open="projects">${icon('cpu')} See my projects</button><a class="action-secondary" href="${cvUrl}" download="${cvFilename}">${icon('download')} Download CV</a></div>
         </div>
       </section>`;
     },
@@ -72,14 +73,31 @@
       </section>`;
     },
     projects() {
-      const project = (symbol,title,descr,stack,links) => `<article class="project-card"><div class="project-card-top"><div class="project-symbol">${icon(symbol)}</div><h3>${title}</h3></div><p>${descr}</p><div class="project-stack">${stack}</div><div class="project-actions">${links.map(([label,url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label} ${icon('arrow')}</a>`).join('')}</div></article>`;
+      const project = (symbol, title, description, stack, links, subtitle = '') => `<article class="project-card">
+        <div class="project-card-top"><div class="project-symbol">${icon(symbol)}</div><h3>${title}</h3></div>
+        ${subtitle ? `<div><p><strong>${subtitle}</strong></p><p class="project-meta">Live · 2026</p></div>` : ''}
+        <p>${description}</p>
+        ${Array.isArray(stack)
+          ? `<div class="skill-list project-tags">${stack.map(technology => tag(technology)).join('')}</div>`
+          : `<div class="project-stack">${stack}</div>`}
+        <div class="project-actions">${links.map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label} ${icon('arrow')}</a>`).join('')}</div>
+      </article>`;
       return `<section>${header('Built & shipped','Featured Projects','Selected work in software engineering, networking and AI.','cpu')}
         <div class="highlight-panel"><div class="highlight-top"><span class="highlight-icon">${icon('layers')}</span><h3>NetPilot AI</h3></div><p><strong>AI-powered network troubleshooting assistant.</strong> A React/TypeScript and Node.js platform that parses Cisco CLI output, correlates evidence across devices and generates troubleshooting guidance. It includes rule-based diagnostics and an optional, privately configured tool-calling AI agent.</p>
           <div class="dialog-cta-row"><a class="action-primary" href="https://netpilot-ai.onrender.com/" target="_blank" rel="noopener noreferrer">${icon('arrow')} Live demo</a><a class="action-secondary" href="https://github.com/AbdelAlSalem/netpilot-ai" target="_blank" rel="noopener noreferrer">${icon('github')} Source code</a></div>
         </div>
         <div class="project-grid">
+          ${project('layers', 'AskMyDocs AI',
+            'Answers questions about PDFs in English and Arabic using retrieval-augmented generation (RAG), multilingual semantic search and Groq. It combines evidence across pages and cites its sources by page. The public demo uses ONNX embeddings and precomputed vectors for a synthetic document. The full local app uses ChromaDB and Sentence Transformers.',
+            ['React', 'TypeScript', 'Python', 'FastAPI', 'RAG', 'Groq API', 'ONNX'],
+            [['Live Demo', 'https://ask-my-docs-ai.vercel.app/'], ['GitHub', 'https://github.com/AbdelAlSalem/AskMyDocs-AI']],
+            'AI-Powered Document Intelligence Assistant')}
+          ${project('calendar', 'ClinicFlow AI',
+            'An English and Arabic AI receptionist with nine validated tools to check availability, prepare bookings for staff approval, reschedule and cancel appointments. It uses SQLite for analytics and double-booking prevention. The public portfolio demo is limited to simulated administration with synthetic data and isolated sessions. Local validation passed 160 automated tests.',
+            ['React', 'TypeScript', 'Python', 'FastAPI', 'SQLite', 'Groq API', 'AI Agents', 'Function Calling'],
+            [['Live Demo', 'https://clinic-flow-ai-sand.vercel.app/'], ['GitHub', 'https://github.com/AbdelAlSalem/ClinicFlow-AI']],
+            'AI-Powered Healthcare Administration Assistant')}
           ${project('code','Full-Stack Notes Application','A complete notes experience with create, read, update and delete APIs backed by a persistent relational database.','React · TypeScript · Express · Prisma · PostgreSQL', [['GitHub', 'https://github.com/AbdelAlSalem/fullstack-notes-app']])}
-          ${project('location','Real Estate Web Application','A browsable real-estate interface with property details, favorites and booking-oriented views.','React · Front-end development · Responsive design', [['GitHub', 'https://github.com/AbdelAlSalem/Real-Estate-Website']])}
           ${project('cap','Resit Exam Declaration System','Role-based student, instructor and faculty secretary interfaces for declaring and administering resit examinations.','Django · Web application · Education systems', [['GitHub', 'https://github.com/AbdelAlSalem/Software-Project-Management-']])}
           ${project('sparkles','Dardeshly','An entrepreneurial product concept for WhatsApp-driven communication and marketing, built with front-end and API work.','React · Node.js · Product design', [])}
         </div>
@@ -105,7 +123,7 @@
         <div class="certificate">${icon('award')}<div><strong>Cisco Networking Academy</strong><p>Network Technician Career Path Exam, networking fundamentals, network support & security, Packet Tracer, Introduction to Cybersecurity and Python Essentials 1 · 2026. CCNA training ongoing.</p></div></div>
         <div class="certificate">${icon('award')}<div><strong>Splunk eLearning</strong><p>Intro to Splunk, Using Fields, Scheduling Reports & Alerts, and Visualizations · May–June 2026</p></div></div>
         <div class="certificate">${icon('award')}<div><strong>Professional workshop</strong><p>AI & Emotional Intelligence for Inclusive Decision-Making · January 2026</p></div></div>
-        <div class="dialog-cta-row"><a class="action-primary" href="${cvUrl}" download="Abdelqader_Al-Salem_CV_2026.docx">${icon('download')} Download full CV</a><button data-open="skills" class="action-secondary">${icon('layers')} View skills</button></div>
+        <div class="dialog-cta-row"><a class="action-primary" href="${cvUrl}" download="${cvFilename}">${icon('download')} Download full CV</a><button data-open="skills" class="action-secondary">${icon('layers')} View skills</button></div>
       </section>`;
     },
     location() {
